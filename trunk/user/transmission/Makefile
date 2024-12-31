@@ -17,7 +17,7 @@ download_test:
 extract_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
 		tar -xf $(SRC_NAME).tar.xz; \
-		patch -p1 -d $(SRC_NAME) < $(SRC_NAME).patch; \
+		#patch -p1 -d $(SRC_NAME) < $(SRC_NAME).patch; \
 		mkdir -p $(SRC_NAME)/third-party/miniupnpc/include/miniupnp ; \
 		cp -r $(SRC_NAME)/third-party/miniupnpc/*.h $(SRC_NAME)/third-party/miniupnpc/include/miniupnp ; \
 	fi )
