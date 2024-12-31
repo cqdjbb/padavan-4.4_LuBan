@@ -1,5 +1,5 @@
-SRC_NAME = transmission-3.00
-SRC_URL = https://github.com/transmission/transmission/releases/download/3.00/transmission-3.00.tar.xz
+SRC_NAME = transmission-4.0.6
+SRC_URL = https://github.com/transmission/transmission/releases/download/4.0.6/transmission-4.0.6.tar.xz
 CFLAGS   += -O2 -ffunction-sections -fdata-sections -fvisibility=hidden -D_LARGEFILE64_SOURCE -D_LFS64_LARGEFILE -Wno-implicit-fallthrough
 LDFLAGS  += -Wl,--gc-sections
 
