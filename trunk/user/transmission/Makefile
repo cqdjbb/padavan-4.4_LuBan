@@ -1,5 +1,5 @@
-SRC_NAME = transmission-4.0.6
-SRC_URL = https://github.com/transmission/transmission/releases/download/4.0.6/transmission-4.0.6.tar.xz
+SRC_NAME = transmission-3.00
+SRC_URL = https://github.com/transmission/transmission/releases/download/3.00/transmission-3.00.tar.xz
 CFLAGS   += -O2 -ffunction-sections -fdata-sections -fvisibility=hidden -D_LARGEFILE64_SOURCE -D_LFS64_LARGEFILE -Wno-implicit-fallthrough
 LDFLAGS  += -Wl,--gc-sections
 
@@ -17,7 +17,7 @@ download_test:
 extract_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
 		tar -xf $(SRC_NAME).tar.xz; \
-		#patch -p1 -d $(SRC_NAME) < $(SRC_NAME).patch; \
+		patch -p1 -d $(SRC_NAME) < $(SRC_NAME).patch; \
 		mkdir -p $(SRC_NAME)/third-party/miniupnpc/include/miniupnp ; \
 		cp -r $(SRC_NAME)/third-party/miniupnpc/*.h $(SRC_NAME)/third-party/miniupnpc/include/miniupnp ; \
 	fi )

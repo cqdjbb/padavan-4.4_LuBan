@@ -1,21 +1,15 @@
-SRC_NAME=openvpn-2.6.12
-SRC_URL = https://github.com/OpenVPN/openvpn/archive/refs/tags/v2.6.12.tar.gz
+SRC_NAME=openvpn-2.5.2
 
 CFLAGS += -ffunction-sections -fdata-sections -fvisibility=hidden
 LDFLAGS += -Wl,--gc-sections
 
-all: download_test extract_test config_test
+all: extract_test config_test
 	$(MAKE) -j$(HOST_NCPU) -C $(SRC_NAME)
-
-download_test:
-	( if [ ! -f $(SRC_NAME).tar.gz ]; then \
-		wget -t5 --timeout=20 --no-check-certificate -O $(SRC_NAME).tar.gz $(SRC_URL); \
-	fi )
 
 extract_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
-		tar -xf $(SRC_NAME).tar.gz; \
-		#patch -d $(SRC_NAME) -p1 < $(SRC_NAME).patch ; \
+		tar -xf $(SRC_NAME).tar.xz; \
+		patch -d $(SRC_NAME) -p1 < $(SRC_NAME).patch ; \
 	fi )
 
 config_test:
