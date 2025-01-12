@@ -5,7 +5,6 @@ all:
 ifeq ($(CONFIG_WITHOUT_KERNEL),y)
 	@echo "napt66 would not build!"
 else
-	@echo "------------------ build napt66!"
 	$(MAKE) -C $(SRC_NAME)
 endif
 

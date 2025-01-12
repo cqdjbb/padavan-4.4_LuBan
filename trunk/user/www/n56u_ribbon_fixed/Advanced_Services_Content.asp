@@ -31,7 +31,6 @@ $j(document).ready(function() {
 	init_itoggle('crond_enable', change_crond_enabled);
 	init_itoggle('ttyd_enable', change_ttyd_enabled);
 	init_itoggle('vlmcsd_enable');
-	init_itoggle('napt66_enable');
 });
 
 </script>
@@ -88,10 +87,6 @@ function initial(){
 	
 	if(!found_app_vlmcsd()){
 		showhide_div('div_vlmcsd', 0);
-	}
-	
-	if(!found_app_napt66()){
-		showhide_div('div_napt66', 0);
 	}
 }
 
@@ -553,21 +548,6 @@ function on_ttyd_link(){
                                                 <div style="position: absolute; margin-left: -10000px;">
                                                     <input type="radio" name="vlmcsd_enable" id="vlmcsd_enable_1" class="input" value="1" <% nvram_match_x("", "vlmcsd_enable", "1", "checked"); %>/><#checkbox_Yes#>
                                                     <input type="radio" name="vlmcsd_enable" id="vlmcsd_enable_0" class="input" value="0" <% nvram_match_x("", "vlmcsd_enable", "0", "checked"); %>/><#checkbox_No#>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr id="div_napt66">
-                                            <th><#Adm_Svc_napt66#></th>
-                                            <td>
-                                                <div class="main_itoggle">
-                                                    <div id="napt66_enable_on_of">
-                                                        <input type="checkbox" id="napt66_enable_fake" <% nvram_match_x("", "napt66_enable", "1", "value=1 checked"); %><% nvram_match_x("", "napt66_enable", "0", "value=0"); %>>
-                                                    </div>
-                                                </div>
-                                                <div style="position: absolute; margin-left: -10000px;">
-                                                    <input type="radio" name="napt66_enable" id="napt66_enable_1" class="input" value="1" <% nvram_match_x("", "napt66_enable", "1", "checked"); %>/><#checkbox_Yes#>
-                                                    <input type="radio" name="napt66_enable" id="napt66_enable_0" class="input" value="0" <% nvram_match_x("", "napt66_enable", "0", "checked"); %>/><#checkbox_No#>
                                                 </div>
                                             </td>
                                         </tr>
